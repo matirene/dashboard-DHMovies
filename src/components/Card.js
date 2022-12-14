@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 function Card(props) {
   return (
     <div className="col-md-4 mb-4">
@@ -26,5 +27,12 @@ Card.defaultProps={
     number: "0",
     icon: "user-check"
 }
+
+Card.propTypes = {
+  title : PropTypes.string.isRequired,
+  color : PropTypes.oneOf(['primary', 'success', 'warning']).isRequired,
+  number : PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  icon : PropTypes.string
+};
 
 export default Card;
